@@ -6,6 +6,8 @@ import CitySelector from "../common/CitySelector.jsx";
 import DateSelector from '../common/DateSelector.jsx'
 import Journey from './Journey.jsx'
 import DepartDate from "./DepartDate.jsx";
+import HighSpeed from "./HighSpeed.jsx";
+
 import {
   exchangeFromTo,
   showCitySelector,
@@ -14,7 +16,8 @@ import {
   setSelectedCity,
   showDateSelector,
   setDepartDate,
-  hideDateSelector
+  hideDateSelector,
+  toggleHighSpeed,
 } from './action'
 
 import { h0 } from '../common/fp'
@@ -28,6 +31,7 @@ function App(props) {
     isLoadingCityData,
     departDate,
     isDateSelectorVisible,
+    highSpeed,
     dispatch
   } = props
 console.log('当前模式是：', import.meta.env.MODE); 
@@ -72,6 +76,12 @@ console.log('当前模式是：', import.meta.env.MODE);
     dispatch(hideDateSelector())
   }, [])
 
+  const highSpeedCbs = useMemo(() =>{
+    return bindActionCreators({
+      toggle: toggleHighSpeed
+    }, dispatch)
+  }, [])
+
   return (
     <div>
       <div className="header-wrapper">
@@ -80,6 +90,7 @@ console.log('当前模式是：', import.meta.env.MODE);
       <form action="./query.html" className="form">
         <Journey from={from} to={to} {...cbs} />
         <DepartDate time={departDate} {...departDateCbs}/>
+        <HighSpeed highSpeed={highSpeed} {...highSpeedCbs} />
       </form>
       <CitySelector 
         show={isCitySelectorVisible}
