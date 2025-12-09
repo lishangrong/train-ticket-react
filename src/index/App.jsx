@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/preserve-manual-memoization */
 import React, { useCallback, useMemo} from "react";
 import { bindActionCreators } from "redux";
 import {connect} from 'react-redux'
@@ -65,6 +66,7 @@ console.log('当前模式是：', import.meta.env.MODE);
       onBack: hideDateSelector
     }, dispatch)
   }, [])
+
   const onSelectDate = useCallback((day) =>{
     if (!day) {
       return
