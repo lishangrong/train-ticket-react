@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.13.2",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.19",
     "normalize.css": "^8.0.1",
