@@ -14,7 +14,7 @@ function useAxios(url) {
     .then(res => setData(res))
     .catch(err => setError(err))
     .finally(() => setLoading(false))
-  }, [url])
+  }, [url]) // 依赖里有 {} || [] 引用类型
 
   return [loading, data, error]
 }

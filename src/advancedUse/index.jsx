@@ -1,8 +1,8 @@
 import React from "react";
 // import ContextDemo from './advancedUse/ContextDemo'
 // const ContextDemo = React.lazy(() => import('./ContextDemo'))
-import HOCDemo from './HOCDemo'
-import RenderPropDemo from './RenderPropDemo'
+// import HOCDemo from './HOCDemo'
+// import RenderPropDemo from './RenderPropDemo'
 
 // import UseContextDemo from './UseContextDemo'
 // import UseReducerDemo from './UseReducerDemo'
@@ -10,6 +10,8 @@ import RenderPropDemo from './RenderPropDemo'
 // import UseCallbackDemo from  './UseCallbackDemo';
 
 // import CostomHookUsage from './CostomHookUsage'
+
+// import UseEffectChangeState from "./UseEffectChangeState";
 
 class AdvanceUseDemo extends React.Component {
   componentDidMount() {
@@ -31,8 +33,9 @@ class AdvanceUseDemo extends React.Component {
         <UseMemoDemo/> */}
         {/* <UseCallbackDemo /> */}
         {/* <CostomHookUsage/> */}
-        <RenderPropDemo a="100" />
+        {/* <RenderPropDemo a="100" /> */}
         {/* <HOCDemo /> */}
+        {/* <UseEffectChangeState /> */}
       </div>
     )
   }
